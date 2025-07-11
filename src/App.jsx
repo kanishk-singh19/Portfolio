@@ -1,14 +1,20 @@
 import React from 'react'
 import Navbar from './sections/Navbar'  
 import Hero from "./sections/Hero"
+import ServiceSummary from './sections/About'
 
 const App = () => {
   return (
-    <div className='relative w-screen min-h-screen overflow-x-hidden'>
+    <div className=' bg-[#ffffff] relative w-screen min-h-screen overflow-x-auto '>
       <Navbar/>
       <Hero />
-      <section id='home' className='min-h-screen'/>
-      <section id='services' className='min-h-screen'/>
+      <ServiceSummary/>
+      <section className='min-h-screen'></section>
+      <section className='min-h-screen'></section>
+      <section className='min-h-screen'></section>
+      <section className='min-h-screen'></section>
+      <section className='min-h-screen'></section>
+      <section className='min-h-screen'></section>
 
     </div>
   )
