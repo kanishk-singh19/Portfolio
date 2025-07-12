@@ -4,7 +4,8 @@ import Hero from "./sections/Hero"
 import ServiceSummary from './sections/About'
 import CustomCursor from './components/CustomCursor'
 import MePage from './sections/MePage'
-import Services from './sections/Services'
+import Projects from './sections/Projects'
+
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       <Hero />
       <ServiceSummary/>
       <MePage/>
-      <Services/>
+      <Projects/>
+      
       <section className='min-h-screen'></section>
       <section className='min-h-screen'></section>
       <section className='min-h-screen'></section>
