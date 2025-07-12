@@ -116,7 +116,7 @@ const Navbar = () => {
             </div>
         </div>
     </nav>
-    <div className='fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-lg cursor-pointer w-12 h-12 md:w-20 md:h-20 lg:w-12 lg:h-12 top-4 right-6' onClick={toggleMenu} style={showBurger? {clipPath: "circle(50% at 50% 50%)"}:{clipPath:"circle(0% at 50% 50%)"}}>
+    <div className='fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-lg cursor-pointer w-12 h-12  lg:w-12 lg:h-12 top-4 right-6' onClick={toggleMenu} style={showBurger? {clipPath: "circle(50% at 50% 50%)"}:{clipPath:"circle(0% at 50% 50%)"}}>
         <span ref={topLineRef} className="black w-6 h-0.5 bg-white rounded-full origin-center"></span>
         <span ref={bottomLineRef} className="black w-6 h-0.5 bg-white rounded-full origin-center"></span>
 

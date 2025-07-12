@@ -288,3 +288,33 @@ body {
   -webkit-text-stroke: 2px black;
   color: transparent;
 }
+/* Disable default cursor globally */
+html, body {
+  cursor: none !important;
+}
+
+/* Optional: Add hover effects for specific elements */
+[data-cursor-hover] {
+  position: relative;
+}
+.custom-cursor {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.custom-cursor.hover-active {
+  background: white;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Ensure all interactive elements show hover state */
+a, button, input, textarea, [data-hover] {
+  cursor: pointer !important;
+}

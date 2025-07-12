@@ -15,16 +15,12 @@ const Hero = () => {
   const marqueeContentRef = useRef(null);
 
   const handleWhatsAppClick = () => {
-    // Replace with your actual WhatsApp number (with country code)
-    const phoneNumber = "9319373141"; // Example: "+919876543210" for India
+    const phoneNumber = "9319373141";
     const defaultMessage = "Hi Kanishk, I'd like to discuss a project!";
-    
-    // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
-    
-    // Open in new tab
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
+  
 
   useEffect(() => {
     // Background animation
@@ -55,14 +51,35 @@ const Hero = () => {
         x: gsap.utils.unitize((x) => parseFloat(x) % contentWidth),
       },
     });
+
+    // Brand color change on scroll to About section
+    ScrollTrigger.create({
+      trigger: "#about",
+      start: "top center",
+      onEnter: () => {
+        gsap.to(brandRef.current.querySelectorAll('h1, sup'), {
+          color: "#ffffff",
+          duration: 0.8,
+          strub:true,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(brandRef.current.querySelectorAll('h1, sup'), {
+          color: "#000000",
+          duration: 0.8,
+          strub:true,
+        });
+      }
+    });
+
   }, []);
 
   return (
     <section className="relative flex items-center justify-center min-h-screen px-4 bg-white overflow-hidden">
       {/* Brand Name (top-left) */}
-      <div ref={brandRef} className="fixed top-6 left-6 z-50 flex items-start gap-1">
-        <h1 className="text-xl sm:text-2xl font-bold tracking-widest text-black">KANISHK</h1>
-        <sup className="text-[10px] sm:text-xs font-medium text-black mt-[2px]">™</sup>
+      <div ref={brandRef} className="fixed top-6 left-6 z-50 flex items-start gap-1 transition-colors">
+        <h1 className="text-xl sm:text-2xl font-bold tracking-widest text-black transition-colors">KANISHK</h1>
+        <sup className="text-[10px] sm:text-xs font-medium text-black mt-[2px] transition-colors">™</sup>
       </div>
 
       {/* Background Image */}
@@ -77,10 +94,10 @@ const Hero = () => {
       </div>
 
       {/* Let's Talk Button with WhatsApp */}
-      <div ref={buttonRef} className="absolute top-6 left-1/2 -translate-x-1/2 z-10">
+      <div ref={buttonRef} className="absolute w-full left-0 right-0 top-5 flex justify-center z-10">
         <button 
           onClick={handleWhatsAppClick}
-          className="px-6 py-2 text-sm sm:text-base font-semibold text-white bg-black rounded-full hover:bg-neutral-800 transition-colors duration-300"
+          className="px-6 py-2 text-sm sm:text-base font-semibold text-white bg-black rounded-full hover:bg-neutral-800 transition-colors duration-300 whitespace-nowrap"
           aria-label="Contact via WhatsApp"
         >
           Let's Talk
