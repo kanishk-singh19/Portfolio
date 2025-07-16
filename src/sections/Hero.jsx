@@ -83,7 +83,7 @@ const Hero = () => {
       </div>
 
       {/* Background Image */}
-      <div className="absolute z-20 w-[290px] sm:w-[300px] md:w-[400px] lg:w-[600px]">
+      <div className="absolute z-20 w-[290px] sm:w-[350px] md:w-[450px] lg:w-[600px]">
         <img 
           ref={bgRef} 
           src="/bg-image2.jpg" 
@@ -106,9 +106,9 @@ const Hero = () => {
 
       {/* Hero Text Lines */}
       <div className="relative z-30 text-center font-extrabold uppercase leading-tight tracking-tight">
-        <h1 ref={line1Ref} className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-black">HEY, I'M KANISHK</h1>
-        <h1 ref={line2Ref} className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl stroke-text text-black">HEY, I'M KANISHK</h1>
-        <h1 ref={line3Ref} className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-black">HEY, I'M KANISHK</h1>
+        <h1 ref={line1Ref} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-black">HEY, I'M KANISHK</h1>
+        <h1 ref={line2Ref} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl stroke-text text-black">HEY, I'M KANISHK</h1>
+        <h1 ref={line3Ref} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-black">HEY, I'M KANISHK</h1>
       </div>
 
       {/* Marquee Loop */}
