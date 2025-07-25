@@ -20,21 +20,21 @@ export const BentoGrid = ({
 
   useGSAP(() => {
     if (!containerRef.current) return;
-    
+
     const gridItems = gsap.utils.toArray(containerRef.current.children) as HTMLElement[];
 
     gridItems.forEach((item, index) => {
-      // Set different entry directions based on position
       const direction = index % 3;
       const fromX = direction === 0 ? -50 : direction === 1 ? 50 : 0;
       const fromY = direction === 2 ? 50 : 0;
 
-      gsap.fromTo(item, 
+      gsap.fromTo(
+        item,
         {
           opacity: 0,
           x: fromX,
           y: fromY,
-          scale: 0.95
+          scale: 0.95,
         },
         {
           opacity: 1,
@@ -48,16 +48,15 @@ export const BentoGrid = ({
             start: "top bottom",
             end: "bottom top",
             toggleActions: "play reverse play reverse",
-            markers: false, // Set to true to debug scroll positions
+            markers: false,
           },
           delay: index * 0.1,
         }
       );
     });
 
-    // Cleanup ScrollTrigger instances
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -66,7 +65,7 @@ export const BentoGrid = ({
       ref={containerRef}
       className={cn(
         "grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-7 sm:p-6",
-        className,
+        className
       )}
     >
       {children}
@@ -109,38 +108,38 @@ export const BentoGridItem = ({
   useGSAP(() => {
     if (!itemRef.current) return;
 
-    // Hover animation
     const hoverAnimation = gsap.to(itemRef.current, {
       y: -8,
       duration: 0.3,
       paused: true,
-      ease: "power1.out"
+      ease: "power1.out",
     });
 
-    itemRef.current.addEventListener("mouseenter", () => hoverAnimation.play());
-    itemRef.current.addEventListener("mouseleave", () => hoverAnimation.reverse());
+    const enter = () => hoverAnimation.play();
+    const leave = () => hoverAnimation.reverse();
 
-    // Cleanup
-    return () => {  
-      itemRef.current?.removeEventListener("mouseenter", () => hoverAnimation.play());
-      itemRef.current?.removeEventListener("mouseleave", () => hoverAnimation.reverse());
+    itemRef.current.addEventListener("mouseenter", enter);
+    itemRef.current.addEventListener("mouseleave", leave);
+
+    return () => {
+      itemRef.current?.removeEventListener("mouseenter", enter);
+      itemRef.current?.removeEventListener("mouseleave", leave);
     };
   }, []);
 
   const handleClick = () => {
     setClicked(true);
     if (onButtonClick) onButtonClick();
-    
-    // Click animation
+
     gsap.to(itemRef.current, {
       keyframes: [
         { scale: 0.95, duration: 0.1 },
         { scale: 1.05, duration: 0.1 },
-        { scale: 1, duration: 0.1 }
+        { scale: 1, duration: 0.1 },
       ],
       onComplete: () => {
         setTimeout(() => setClicked(false), 1500);
-      }
+      },
     });
   };
 
@@ -150,7 +149,7 @@ export const BentoGridItem = ({
       className={cn(
         "group/bento relative shadow-input flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 p-4 h-full will-change-transform",
         "bg-gray-900/50 backdrop-blur-sm transition-all duration-300",
-        className,
+        className
       )}
     >
       {header}
@@ -160,7 +159,7 @@ export const BentoGridItem = ({
           <div
             className={cn(
               "mt-2 mb-2 font-sans font-bold text-neutral-400 dark:text-neutral-200",
-              titleClassName,
+              titleClassName
             )}
           >
             {title}
@@ -175,7 +174,10 @@ export const BentoGridItem = ({
               <img
                 src={img}
                 alt={typeof title === "string" ? title : ""}
-                className={cn("w-full h-full object-cover transition-transform duration-500 group-hover/bento:scale-105", imgClassName)}
+                className={cn(
+                  "w-full h-full object-cover transition-transform duration-500 group-hover/bento:scale-105",
+                  imgClassName
+                )}
               />
             </div>
           )}
@@ -197,7 +199,9 @@ export const BentoGridItem = ({
                 onClick={handleClick}
                 className={cn(
                   "w-full px-4 py-2 text-sm font-semibold text-white rounded-lg transition",
-                  clicked ? "bg-white-600" : "bg-white/70 hover:bg-white/90 text-black/70"
+                  clicked
+                    ? "bg-white-600"
+                    : "bg-white/70 hover:bg-white/90 text-black/70"
                 )}
               >
                 {clicked ? "Clicked!" : buttonText}

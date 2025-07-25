@@ -188,6 +188,7 @@ export const items = [
     img: "/projects/bookit.png",
     spareImg: "",
     buttonText: "View Project",
+    buttonHref: "https://github.com/kanishk-singh19/Bookit",
   },
   {
     id: 2,
@@ -197,7 +198,8 @@ export const items = [
     imgClassName: "w-full h-full object-cover rounded-xl",
     titleClassName: "justify-start",
     img: "/projects/brainwave.png",
-    spareImg: "",buttonText: "View Project"
+    spareImg: "",buttonText: "View Project",
+    buttonHref: "https://github.com/kanishk-singh19/Brainwave",
   },
   {
     id: 3,
@@ -207,7 +209,8 @@ export const items = [
     imgClassName: "w-full h-full object-cover rounded-xl",
     titleClassName: "justify-center",
     img: "/projects/prepedge.png",
-    spareImg: "",buttonText: "View Project"
+    spareImg: "",buttonText: "View Project",
+    buttonHref: "https://github.com/kanishk-singh19/PrepEdge",
   },
   {
     id: 4,
@@ -217,7 +220,8 @@ export const items = [
     imgClassName: "w-full h-full object-cover rounded-xl",
     titleClassName: "justify-start",
     img: "/projects/podzify.png",
-    spareImg: "/b4.svg",buttonText: "View Project"
+    spareImg: "/b4.svg",buttonText: "View Project",
+    buttonHref: "https://github.com/kanishk-singh19/Podzify",
   },
   {
     id: 5,
@@ -229,6 +233,7 @@ export const items = [
     img: "/projects/velvetpour.png",
 
     spareImg: "/grid.svg",
-    buttonText: "View Project"
+    buttonText: "View Project",
+    buttonHref: "https://github.com/kanishk-singh19/VelvetPour",
   },
 ];
