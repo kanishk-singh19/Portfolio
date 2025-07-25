@@ -5,6 +5,7 @@ import ServiceSummary from './sections/About'
 import CustomCursor from './components/CustomCursor'
 import MePage from './sections/MePage'
 import Projects from './sections/Projects'
+import ContactSection from './sections/contactSection'
 
 
 const App = () => {
@@ -16,13 +17,9 @@ const App = () => {
       <ServiceSummary/>
       <MePage/>
       <Projects/>
+      <ContactSection/>
       
-      <section className='min-h-screen'></section>
-      <section className='min-h-screen'></section>
-      <section className='min-h-screen'></section>
-      <section className='min-h-screen'></section>
-      <section className='min-h-screen'></section>
-
+      
     </div>
   )
 }

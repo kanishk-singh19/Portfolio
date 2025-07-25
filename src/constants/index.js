@@ -172,13 +172,10 @@ export const servicesData = [
 //   },
 // ];
 export const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/ali.sanatidev/reels/" },
-  {
-    name: "Youtube",
-    href: "https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA",
-  },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/ali-sanati/" },
-  { name: "GitHub", href: "https://github.com/Ali-Sanati" },
+  
+  
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/kanishk-singh-61734628a/" },
+  { name: "GitHub", href: "https://github.com/kanishk-singh19" },
 ];
 
 export const items = [
