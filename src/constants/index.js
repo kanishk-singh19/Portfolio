@@ -173,7 +173,6 @@ export const servicesData = [
 // ];
 export const socials = [
   
-  
   { name: "LinkedIn", href: "https://www.linkedin.com/in/kanishk-singh-61734628a/" },
   { name: "GitHub", href: "https://github.com/kanishk-singh19" },
 ];

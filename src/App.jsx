@@ -5,7 +5,8 @@ import ServiceSummary from './sections/About'
 import CustomCursor from './components/CustomCursor'
 import MePage from './sections/MePage'
 import Projects from './sections/Projects'
-import ContactSection from './sections/contactSection'
+import ContactSection from './sections/ContactSection';
+
 
 
 const App = () => {
